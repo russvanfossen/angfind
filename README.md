@@ -1,5 +1,5 @@
 # Angle Finder
-Simple tool, can be used to calculate the difference in an angle between 2 images. 
+Simple tool, can be used to calculate the difference in an angle between 2 images. Just for funzies
 
 Dialogue box promts to locate 2 different image files. <br>
 ![image](https://github.com/russvanfossen/angfind/assets/10410808/5b6a05d1-95a7-4144-9ad8-3ec6261c730e)
