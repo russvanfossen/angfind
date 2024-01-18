@@ -7,7 +7,7 @@ degrees_list = []
 img = ''
 
 
-def drawcircle(event, x, y, flags, params):
+def drawcircle(event, x, y, flags, params):  # used to create the points when clicking
     # global img
     global points
     if event == cv2.EVENT_LBUTTONDOWN:
@@ -69,21 +69,32 @@ def main():
             global img
             global points
             points = []
-            # img_path_1 = input("File Path to Image 1:")
             img_path_1 = values[0]
             img = cv2.imread(img_path_1)
             cv2.putText(img, 'Press Q to quit', (10, 10), cv2.FONT_HERSHEY_DUPLEX, .5,
+                        (0, 0, 255), 1, cv2.LINE_AA)
+            cv2.putText(img, 'Left click to add points', (10, 30), cv2.FONT_HERSHEY_DUPLEX, .5,
+                        (0, 0, 255), 1, cv2.LINE_AA)
+            cv2.putText(img, 'Add two points for a reference line that is the same in both images.', (10, 50),
+                        cv2.FONT_HERSHEY_DUPLEX, .5,
+                        (0, 0, 255), 1, cv2.LINE_AA)
+            cv2.putText(img, 'Then add two point for the line to be compared', (10, 70), cv2.FONT_HERSHEY_DUPLEX, .5,
                         (0, 0, 255), 1, cv2.LINE_AA)
             cv2.imshow('image', img)
             cv2.setMouseCallback('image', drawcircle)
             k = cv2.waitKey(0)
             if k == ord('q'):
                 cv2.destroyAllWindows()
-
-            # img_path_2 = input("File Path to Image 2:")
             img_path_2 = values[1]
             img = cv2.imread(img_path_2)
             cv2.putText(img, 'Press Q to quit', (10, 10), cv2.FONT_HERSHEY_DUPLEX, .5,
+                        (0, 0, 255), 1, cv2.LINE_AA)
+            cv2.putText(img, 'Left click to add points', (10, 30), cv2.FONT_HERSHEY_DUPLEX, .5,
+                        (0, 0, 255), 1, cv2.LINE_AA)
+            cv2.putText(img, 'Add two points for a reference line that is the same in both images.', (10, 50),
+                        cv2.FONT_HERSHEY_DUPLEX, .5,
+                        (0, 0, 255), 1, cv2.LINE_AA)
+            cv2.putText(img, 'Then add two point for the line to be compared', (10, 70), cv2.FONT_HERSHEY_DUPLEX, .5,
                         (0, 0, 255), 1, cv2.LINE_AA)
             cv2.imshow('image', img)
             cv2.setMouseCallback('image', drawcircle)
